@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h5>Vidoes List</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @for (item of videoList; track $index) {
+                    <div class="col-4 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">{{item.videoTitle}}</h6>
+                                <p class="card-text">{{item.videoUrl}}</p>
+                                <a class="card-link">
+                                    <button class="btn btn-success btn-sm" (click)="onEdit(item)">Edit</button>
+                                </a>
+                                <a class="card-link">
+                                    <button class="btn btn-danger btn-sm"
+                                        (click)="onDelete(item.videoId)">Delete</button>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h5>New Videos From</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Title</label>
+                        <input type="text" [(ngModel)]="videoObj.videoTitle" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Url</label>
+                        <input type="text" [(ngModel)]="videoObj.videoUrl" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Thumbnail</label>
+                        <input type="text" [(ngModel)]="videoObj.videoThumbnail" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Duration</label>
+                        <input type="text" [(ngModel)]="videoObj.totalDuration" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Description</label>
+                        <textarea name="" id="" [(ngModel)]="videoObj.videoDescription" rows="3"
+                            class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="col-6 text-center">
+                        @if(videoObj.videoId == 0){
+
+                        <button class="btn btn-success" (click)="onSavevideo()">Save </button>
+                        }@else {
+                        <button class="btn btn-success" (click)="onUpdatevideo()">Update </button>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

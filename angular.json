@@ -16,9 +16,11 @@
             "outputPath": "dist/demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+           "polyfills": [
+
+            "src/polyfills.ts"
+            ]
+,
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -27,7 +29,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },

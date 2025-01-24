@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-12 p-3 bg-danger text-center">
+        <h3>Data Binding</h3>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 p-3 bg-success text-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+        <h3>One Way</h3>
+
+    </div>
+    <div class="col-6 p-3 bg-primary text-center">
+        <h3>Tow Way</h3>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 text-center">
+        <div class="row">
+            <div class="col-6 p-3 bg-secondary">
+                <h4>From .ts to .html</h4>
+            </div>
+
+            <div class="col-6 p-3 bg-warning">
+                <h4>From .html to .ts</h4>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-6 text-center">
+        <div class="row">
+            <div class="col-12 p-3 bg-danger">
+                <h4>using ngModel</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 text-center">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6 p-3 bg-success">
+                        Interpolation
+                    </div>
+                    <div class="col-6 p-3 bg-primary">
+                        Property Binding
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6 p-3 bg-secondary">
+                <h4>Event Binding</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 p-3 bg-primary text-center">
+
+
+
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-3">
+        <p>Interpolation => {{courseName}}</p>
+
+        <span>{{courseDuration}}</span>
+    </div>
+
+    <div class="col-3">
+        <input type="text" placeholder="Name" [value]="courseName" [minLength]="nameMinLength">
+    </div>
+    <div class="col-3">
+        <input [type]="myInputType">
+    </div>
+    <div class="col-3">
+        <p [class]="primaryClassName">This is Paragraph</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2">
+        <button class="btn-primary btn" (click)="showMessage()">Show Message</button>
+    </div>
+    <div class="col-3">
+        <select (change)="onStateChange($event)">
+            <option value="">Select State</option>
+            <option value="Mah">Mahrashtra</option>
+            <option value="pnj">Punjab</option>
+            <option value="go">Goa</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-primary" (click)="showLanguageName('Angular')">Angular</button>
+        <button class="btn btn-danger" (click)="showLanguageName('React')">React</button>
+        <button class="btn btn-warning" (click)="showLanguageName('Java')">Java</button>
+    </div>
+
+</div>
+
+
+<div class="row pt-4">
+    <div class="col-3">
+        <input type="text" placeholder="Course Name" [value]="courseName">
+
+    </div>
+    <div class="col-3">
+
+        <input type="text" [(ngModel)]="courseName" placeholder="Course Name">
+    </div>
+</div>
